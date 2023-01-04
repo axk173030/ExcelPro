@@ -20,7 +20,12 @@ public class dashBoardPage {
 	
 	@FindBy(how =How.XPATH, using ="//*[@id=\"side-menu\"]/li[3]/a") WebElement customer_menu_Element;
 @FindBy(how =How.XPATH,using="//*[@id=\"side-menu\"]/li[3]/ul/li[1]/a")WebElement Add_customer_menu_Element;
-	public void validateDashBoard(String validationText) {
+	
+@FindBy(how=How.XPATH,using="//*[@id=\"side-menu\"]/li[3]/ul/li[2]/a") WebElement List_Customer_Element;
+
+
+
+public void validateDashBoard(String validationText) {
 		Assert.assertEquals(dashBoard_Element.getText(), validationText, "dash not available");
 	}
 		public void clickcustomerMentElement1() {
@@ -29,6 +34,9 @@ public class dashBoardPage {
 	public void clickAddcustomerMentElement() {
 		Add_customer_menu_Element.click();
 	
+		
+	}public void clickLIstCustomer() {
+		List_Customer_Element.click();
 		
 	}
 }

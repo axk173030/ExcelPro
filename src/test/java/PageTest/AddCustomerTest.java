@@ -34,9 +34,9 @@ public class AddCustomerTest {
 		driver = BrowserFactory.init();
 
 		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
-		loginpage.insertUsername("demo@techfios.com");
+		loginpage.insertUsername(username);
 		Thread.sleep(2000);
-		loginpage.insertPassword("abc123");
+		loginpage.insertPassword(password);
 		Thread.sleep(2000);
 		loginpage.elickSininButton();
 
@@ -47,6 +47,7 @@ public class AddCustomerTest {
 		Thread.sleep(2000);
 	    dpage.clickAddcustomerMentElement();
 	    Thread.sleep(2000);
+	    
 		AddCutomerPage acp = PageFactory.initElements(driver, AddCutomerPage.class);
 		
 		acp.insertFirstName(fullName);
@@ -71,6 +72,14 @@ public class AddCustomerTest {
 		acp.clickonSaveButton();
 		
 		Thread.sleep(2000);
+		dpage.clickLIstCustomer();
+		Thread.sleep(2000);
+		acp.validateInsertedCustomerAndDelete();
+		
+		Thread.sleep(2000);
+		acp.clickConfirmButton();
+		Thread.sleep(2000);
+	
 		BrowserFactory.tearDown();
 
 	}

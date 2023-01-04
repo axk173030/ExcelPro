@@ -36,6 +36,7 @@ public class LoginPageTest {
 		
 	dashBoardPage dpage = PageFactory.initElements(driver, dashBoardPage.class);
 	dpage.validateDashBoard("Dashboard");
+	dpage.clickLIstCustomer();
 	Thread.sleep(2000);
 	
 	
